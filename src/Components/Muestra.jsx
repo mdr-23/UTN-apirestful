@@ -1,4 +1,4 @@
-function Producto( {date, positive, negative} ){
+function Muestra( {date, positive, negative} ){
     return(
         <div>
             <br />
@@ -10,4 +10,4 @@ function Producto( {date, positive, negative} ){
     )
 }
 
-export default Producto
+export default Muestra

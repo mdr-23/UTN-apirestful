@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { getAllProductos } from '../Services/productosService'
-import Producto from './Muestra'
+import { getAllMuestras } from '../Services/muestrasService'
+import Muestra from './Muestra'
 
-function Productos(){
+function Muestras(){
 
-    const [productos, setProductos] = useState([])
+    const [muestras, setMuestras] = useState([])
 
     useEffect(
         () => {
             const resultado = async() =>{
                 try{
-                    const responseData = await getAllProductos()
+                    const responseData = await getAllMuestras()
                     console.log(responseData)
-                    setProductos(responseData)
+                    setMuestras(responseData)
                 }catch(e){
                     console.log(e)
                 }
@@ -25,10 +25,10 @@ function Productos(){
     return(
         <>
             <h1>The Covid Tracking Project API</h1>
-            {productos.map(producto => <Producto date={producto.date} positive={producto.positive} negative={producto.negative}/>)}
+            {muestras.map(muestra => <Muestra date={muestra.date} positive={muestra.positive} negative={muestra.negative}/>)}
         </>
     )
 
 }
 
-export default Productos
+export default Muestras
